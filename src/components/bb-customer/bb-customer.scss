@@ -1,0 +1,17 @@
+@import "../../global/styles/variables.scss";
+@import "../../global/styles/utils.scss";
+
+.customer-item { border-radius:5px; padding:5px; display:flex; flex-wrap:wrap; align-items: center;
+    > * { padding-left:10px; padding-right:10px; }
+    &:hover, &:focus, &:active { background-color:#e5e5e5; }
+    .customer-data, .booking-data { justify-self: flex-end; }
+
+    &[class *="customer-item--payment"] { padding-right:50px; position:relative;
+        &:after { @include material-icon-styles; position:absolute; right:0; top:50%; transform:translate(-50%, -50%); }
+    }
+    &.customer-item--payment-paid:after { content:'local_atm'; }
+    &.customer-item--payment-guarantee:after { content:'flip'; }
+    &.customer-item--payment-no-guarantee:after { content:'crop_free'; }
+}
+
+.payment-data { padding-left:5px;}

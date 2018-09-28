@@ -4,12 +4,55 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>B&B components workbench</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="/build/bb-wc.js"></script>
-
+  <script>
+    // language configuration
+    window.configuration = {};
+    window.configuration.i18n = {
+      "contactVerb": "contacter", 
+      "contactMeanPhone":"par téléphone", 
+      "contactMeanEmail":"par email"
+    };
+  </script>
 </head>
 <body>
-
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-
+  <main>
+    <bb-customer-list customers='[{ "customer": { "firstName": "Paul", "lastName": "Popo", "phone": "4564646464", "email": "donray@gmail.com" }, "booking": { "paymentType": "18h", "hotel": "B&B ibiza", "basketDescription": "1x pdj, 1x pipe" } }, { "customer": { "firstName": "Paul", "lastName": "Popo", "phone": "4564646464", "email": "donray@gmail.com" }, "booking": { "paymentType": "18h", "hotel": "B&B ibiza", "basketDescription": "1x pdj, 1x pipe" } }, { "customer": { "firstName": "Paul", "lastName": "Popo", "phone": "4564646464", "email": "donray@gmail.com" }, "booking": { "paymentType": "18h", "hotel": "B&B ibiza", "basketDescription": "1x pdj, 1x pipe" } }]'></bb-customer-list>
+    <bb-customer payment-type="voucher">
+      <bb-contact first-name="Basile" last-name="Di Manski" phone="+58 0412-1234567" email="donray@gmail.com"></bb-contact>
+      <bb-booking name="B&B Atlantis Le Zénith" basket-description="2 personnes, 1 nuité, 27-28/08/18 C12N x1, pdj x1"></bb-booking>
+    </bb-customer>
+    <bb-customer payment-type="cb">
+      <bb-contact first-name="Raymond" last-name="Donovan" phone="+33 555-11455885" email="donovan@gmail.com"></bb-contact>
+    </bb-customer>
+    <bb-customer>
+        <bb-contact first-name="Raymond" last-name="Donovan" phone="+33 555-11455885" email="donovan@gmail.com"></bb-contact>
+      </bb-customer>
+    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <bb-input lng='{"labelA": "valueA", "labelB": "valueB"}' endpoint="drupal/api/hotel/0124588TZ21"></bb-input>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </main>
+  <aside>
+    <h1>used Bootstrap 4 elements</h1>
+    <ul>
+      <li>forms & forms elements</li>
+    </ul>
+  </aside>
 </body>
-</html>

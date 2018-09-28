@@ -29,6 +29,181 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface BbBooking {
+      'basketDescription': string;
+      'name': string;
+    }
+  }
+
+  interface HTMLBbBookingElement extends StencilComponents.BbBooking, HTMLStencilElement {}
+
+  var HTMLBbBookingElement: {
+    prototype: HTMLBbBookingElement;
+    new (): HTMLBbBookingElement;
+  };
+  interface HTMLElementTagNameMap {
+    'bb-booking': HTMLBbBookingElement;
+  }
+  interface ElementTagNameMap {
+    'bb-booking': HTMLBbBookingElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'bb-booking': JSXElements.BbBookingAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BbBookingAttributes extends HTMLAttributes {
+      'basketDescription'?: string;
+      'name'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BbContact {
+      'email': string;
+      'firstName': string;
+      'lastName': string;
+      'phone': string;
+    }
+  }
+
+  interface HTMLBbContactElement extends StencilComponents.BbContact, HTMLStencilElement {}
+
+  var HTMLBbContactElement: {
+    prototype: HTMLBbContactElement;
+    new (): HTMLBbContactElement;
+  };
+  interface HTMLElementTagNameMap {
+    'bb-contact': HTMLBbContactElement;
+  }
+  interface ElementTagNameMap {
+    'bb-contact': HTMLBbContactElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'bb-contact': JSXElements.BbContactAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BbContactAttributes extends HTMLAttributes {
+      'email'?: string;
+      'firstName'?: string;
+      'lastName'?: string;
+      'phone'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BbCustomerList {
+      'customers': any[]|string;
+    }
+  }
+
+  interface HTMLBbCustomerListElement extends StencilComponents.BbCustomerList, HTMLStencilElement {}
+
+  var HTMLBbCustomerListElement: {
+    prototype: HTMLBbCustomerListElement;
+    new (): HTMLBbCustomerListElement;
+  };
+  interface HTMLElementTagNameMap {
+    'bb-customer-list': HTMLBbCustomerListElement;
+  }
+  interface ElementTagNameMap {
+    'bb-customer-list': HTMLBbCustomerListElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'bb-customer-list': JSXElements.BbCustomerListAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BbCustomerListAttributes extends HTMLAttributes {
+      'customers'?: any[]|string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BbCustomer {
+      'paymentType': 'voucher'|'cb'|'card'|'18h';
+    }
+  }
+
+  interface HTMLBbCustomerElement extends StencilComponents.BbCustomer, HTMLStencilElement {}
+
+  var HTMLBbCustomerElement: {
+    prototype: HTMLBbCustomerElement;
+    new (): HTMLBbCustomerElement;
+  };
+  interface HTMLElementTagNameMap {
+    'bb-customer': HTMLBbCustomerElement;
+  }
+  interface ElementTagNameMap {
+    'bb-customer': HTMLBbCustomerElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'bb-customer': JSXElements.BbCustomerAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BbCustomerAttributes extends HTMLAttributes {
+      'paymentType'?: 'voucher'|'cb'|'card'|'18h';
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BbInput {
+      'endpoint': string;
+      'lng': Object|string;
+    }
+  }
+
+  interface HTMLBbInputElement extends StencilComponents.BbInput, HTMLStencilElement {}
+
+  var HTMLBbInputElement: {
+    prototype: HTMLBbInputElement;
+    new (): HTMLBbInputElement;
+  };
+  interface HTMLElementTagNameMap {
+    'bb-input': HTMLBbInputElement;
+  }
+  interface ElementTagNameMap {
+    'bb-input': HTMLBbInputElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'bb-input': JSXElements.BbInputAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BbInputAttributes extends HTMLAttributes {
+      'endpoint'?: string;
+      'lng'?: Object|string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface MyComponent {
       'first': string;
       'last': string;

@@ -1,0 +1,10 @@
+@import "../../global/styles/variables.scss";
+@import "../../global/styles/utils.scss";
+
+.booking-data { display:flex; align-self:center; align-items:flex-start;
+    > * { flex:0 1 auto; padding:5px;
+        &:last-child { padding-right:0; }
+    }
+    &:before { content:'event'; @include material-icon-styles; padding:5px 5px 5px 0; }
+    .booking-data__hotel { font-weight:bold; }
+}
