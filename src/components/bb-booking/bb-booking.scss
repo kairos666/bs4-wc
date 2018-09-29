@@ -1,10 +1,16 @@
 @import "../../global/styles/variables.scss";
 @import "../../global/styles/utils.scss";
 
-.booking-data { display:flex; align-self:center; align-items:flex-start;
-    > * { flex:0 1 auto; padding:5px;
-        &:last-child { padding-right:0; }
+bb-booking {
+    .booking-data { display:flex; align-self:center; align-items:flex-start;
+        > * { flex:0 1 auto; padding:$gutter-sm;
+            &:last-child { padding-right:0; }
+        }
+        &:before { content:'event'; @include material-icon-styles; align-self: center; font-size:$icon-size; padding:$gutter-sm $gutter-sm $gutter-sm 0; }
+        .booking-data__hotel { 
+            span:first-child { font-weight:bold; }
+            span .material-icons { font-size:inherit; line-height:inherit; position:relative; top:2px; }
+            > * { display:block; }
+        }
     }
-    &:before { content:'event'; @include material-icon-styles; padding:5px 5px 5px 0; }
-    .booking-data__hotel { font-weight:bold; }
 }

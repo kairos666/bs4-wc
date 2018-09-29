@@ -26,9 +26,9 @@ export class BbCustomerList {
         <ul class="customer-list">
             { this._customers.map(item => 
                 <li>
-                    <bb-customer payment-type={item.booking.paymentType}>
+                    <bb-customer>
                         <bb-contact first-name={item.customer.firstName} last-name={item.customer.lastName} phone={item.customer.phone} email={item.customer.email}></bb-contact>
-                        <bb-booking name={item.booking.hotel} basket-description={item.booking.basketDescription}></bb-booking>
+                        <bb-booking name={item.booking.hotel} basket-description={item.booking.basketDescription} payment-type={item.booking.paymentType}></bb-booking>
                     </bb-customer>
                 </li>
             )}

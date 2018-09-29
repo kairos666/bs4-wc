@@ -32,6 +32,7 @@ declare global {
     interface BbBooking {
       'basketDescription': string;
       'name': string;
+      'paymentType': 'voucher'|'cb'|'card'|'18h';
     }
   }
 
@@ -56,6 +57,7 @@ declare global {
     export interface BbBookingAttributes extends HTMLAttributes {
       'basketDescription'?: string;
       'name'?: string;
+      'paymentType'?: 'voucher'|'cb'|'card'|'18h';
     }
   }
 }
@@ -137,7 +139,7 @@ declare global {
 
   namespace StencilComponents {
     interface BbCustomer {
-      'paymentType': 'voucher'|'cb'|'card'|'18h';
+
     }
   }
 
@@ -160,7 +162,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BbCustomerAttributes extends HTMLAttributes {
-      'paymentType'?: 'voucher'|'cb'|'card'|'18h';
+
     }
   }
 }
@@ -196,6 +198,74 @@ declare global {
     export interface BbInputAttributes extends HTMLAttributes {
       'endpoint'?: string;
       'lng'?: Object|string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BsDropdown {
+      'btnType': 'secondary'|'primary'|'success'|'info'|'warning'|'danger';
+      'split': boolean;
+    }
+  }
+
+  interface HTMLBsDropdownElement extends StencilComponents.BsDropdown, HTMLStencilElement {}
+
+  var HTMLBsDropdownElement: {
+    prototype: HTMLBsDropdownElement;
+    new (): HTMLBsDropdownElement;
+  };
+  interface HTMLElementTagNameMap {
+    'bs-dropdown': HTMLBsDropdownElement;
+  }
+  interface ElementTagNameMap {
+    'bs-dropdown': HTMLBsDropdownElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'bs-dropdown': JSXElements.BsDropdownAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BsDropdownAttributes extends HTMLAttributes {
+      'btnType'?: 'secondary'|'primary'|'success'|'info'|'warning'|'danger';
+      'split'?: boolean;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BsSplitButton {
+      'btnType': 'secondary'|'primary'|'success'|'info'|'warning'|'danger';
+    }
+  }
+
+  interface HTMLBsSplitButtonElement extends StencilComponents.BsSplitButton, HTMLStencilElement {}
+
+  var HTMLBsSplitButtonElement: {
+    prototype: HTMLBsSplitButtonElement;
+    new (): HTMLBsSplitButtonElement;
+  };
+  interface HTMLElementTagNameMap {
+    'bs-split-button': HTMLBsSplitButtonElement;
+  }
+  interface ElementTagNameMap {
+    'bs-split-button': HTMLBsSplitButtonElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'bs-split-button': JSXElements.BsSplitButtonAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BsSplitButtonAttributes extends HTMLAttributes {
+      'btnType'?: 'secondary'|'primary'|'success'|'info'|'warning'|'danger';
     }
   }
 }

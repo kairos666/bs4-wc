@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'bb-customer',
@@ -7,23 +7,11 @@ import { Component, Prop } from '@stencil/core';
 })
 export class BbCustomer {
 
-  @Prop() paymentType: 'voucher'|'cb'|'card'|'18h';
-
   render() {
     return (
-      <div class={ `customer-item ${this.paymenttypeToStyleClass(this.paymentType)}` }>
+      <div class="customer-item">
         <slot></slot>
       </div>
     );
-  }
-
-  private paymenttypeToStyleClass(payment:string):string {
-    return (payment === 'voucher' || payment === 'card') 
-    ? 'customer-item--payment-paid'
-    : (payment === 'cb')
-    ? 'customer-item--payment-guarantee'
-    : (payment === '18h')
-    ? 'customer-item--payment-no-guarantee'
-    : '';
   }
 }

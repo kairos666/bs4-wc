@@ -1,12 +1,14 @@
 @import "../../global/styles/variables.scss";
 @import "../../global/styles/utils.scss";
 
-.customer-data { display:flex; align-items:flex-start;
-    > * { flex:0 1 auto; padding:5px;
-        &:last-child { padding-right:0; }
+bb-contact {
+    .customer-data { display:flex; align-items:flex-start;
+        > * { flex:0 1 auto; padding:$gutter-sm;
+            &:last-child { padding-right:0; }
+        }
+        &:before { content:'account_circle'; align-self:center; @include material-icon-styles; font-size:$icon-size; padding:$gutter-sm $gutter-sm $gutter-sm 0; }
+        .customer-data__name { font-weight:bold; }
+        .customer-data__name > *,
+        .customer-data__contact > * { display:block; }
     }
-    &:before { content:'face'; align-self:center; @include material-icon-styles; padding:5px 5px 5px 0; }
-    .customer-data__name { font-weight:bold; }
-    .customer-data__name > *,
-    .customer-data__contact > * { display:block; }
 }
