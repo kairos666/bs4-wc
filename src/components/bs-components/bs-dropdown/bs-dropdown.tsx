@@ -1,10 +1,12 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Element } from '@stencil/core';
 
 @Component({
   tag: 'bs-dropdown',
+  styleUrl: 'bs-dropdown.scss',
   shadow: false
 })
 export class BsDropdown {
+  @Element() elt: HTMLElement;
   @Prop() btnType: 'secondary'|'primary'|'success'|'info'|'warning'|'danger'
   @Prop() split: boolean;
   @State() isOpen: boolean = false;
@@ -25,8 +27,19 @@ export class BsDropdown {
     );
   }
 
+  componentDidLoad() {
+    document.addEventListener('click', this.handleOutsideClick.bind(this));
+  }
+
+  componentDidUnload() {
+    document.removeEventListener('click', this.handleOutsideClick.bind(this));
+  }
 
   private dropBtnClicked():void {
     this.isOpen = !this.isOpen;
+  }
+
+  private handleOutsideClick(evt:UIEvent):void {
+    if (evt.target !== this.elt.querySelector('.dropdown-toggle')) this.isOpen = false;
   }
 }
