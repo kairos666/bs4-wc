@@ -25,15 +25,18 @@
 </head>
 <body>
   <main>
+    <bb-block-wrapper block-state="loading" block-title="Clients du jour">
+      <bb-customer-list customers='[{ "customer": { "firstName": "Paul", "lastName": "Popo", "phone": "4564646464", "email": "donray@gmail.com" }, "booking": { "paymentType": "cb", "hotel": "B&B ibiza", "basketDescription": "2 personnes, 1 nuité, 27-28/08/18 C12N x1, pdj x1dj, 1x pipe" }, "actions": [{ "labelKey": "bookingActionCheckIn", "actionType": "navigate" }] }, { "customer": { "firstName": "Paul", "lastName": "Proust", "phone": "4564646464", "email": "donray@gmail.com" }, "booking": { "paymentType": "voucher", "hotel": "B&B ibiza", "basketDescription": "1x pdj, 1x pipe" }, "actions": [{ "labelKey": "bookingActionCheckIn", "actionType": "navigate" }, { "labelKey": "bookingActionRefund", "actionType": "navigate" }, { "labelKey": "bookingActionCancel", "actionType": "navigate" }] }, { "customer": { "firstName": "Pablo", "lastName": "Picasso", "phone": "4564646464", "email": "donray@gmail.com" }, "booking": { "paymentType": "18h", "hotel": "B&B ibiza", "basketDescription": "1x pdj, 1x pipe" } }]'></bb-customer-list>
+    </bb-block-wrapper>
+    <hr>
     <bs-split-button btn-type="danger">
-      <button type="button" slot="primary-action" class="btn btn-danger">click me!</button>
-      content
-    </bs-split-button>
-    <bs-dropdown btn-type="primary">
-        <span slot="drop-trigger">click me!</span>
-        <span slot="drop-content">drop content is here</span>
-    </bs-dropdown>
-    <bb-customer-list customers='[{ "customer": { "firstName": "Paul", "lastName": "Popo", "phone": "4564646464", "email": "donray@gmail.com" }, "booking": { "paymentType": "cb", "hotel": "B&B ibiza", "basketDescription": "2 personnes, 1 nuité, 27-28/08/18 C12N x1, pdj x1dj, 1x pipe" }, "actions": [{ "labelKey": "bookingActionCheckIn", "actionType": "navigate" }] }, { "customer": { "firstName": "Paul", "lastName": "Proust", "phone": "4564646464", "email": "donray@gmail.com" }, "booking": { "paymentType": "voucher", "hotel": "B&B ibiza", "basketDescription": "1x pdj, 1x pipe" }, "actions": [{ "labelKey": "bookingActionCheckIn", "actionType": "navigate" }, { "labelKey": "bookingActionRefund", "actionType": "navigate" }, { "labelKey": "bookingActionCancel", "actionType": "navigate" }] }, { "customer": { "firstName": "Pablo", "lastName": "Picasso", "phone": "4564646464", "email": "donray@gmail.com" }, "booking": { "paymentType": "18h", "hotel": "B&B ibiza", "basketDescription": "1x pdj, 1x pipe" } }]'></bb-customer-list>
+        <button type="button" slot="primary-action" class="btn btn-danger">click me!</button>
+        content
+      </bs-split-button>
+      <bs-dropdown btn-type="primary">
+          <span slot="drop-trigger">click me!</span>
+          <span slot="drop-content">drop content is here</span>
+      </bs-dropdown>
     <bb-customer payment-type="voucher">
       <bb-contact first-name="Basile" last-name="Di Manski" phone="+58 0412-1234567" email="donray@gmail.com"></bb-contact>
       <bb-booking name="B&B Atlantis Le Zénith" basket-description="2 personnes, 1 nuité, 27-28/08/18 C12N x1, pdj x1"></bb-booking>
@@ -51,24 +54,9 @@
       </bb-customer>
     <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
     <bb-input lng='{"labelA": "valueA", "labelB": "valueB"}' endpoint="drupal/api/hotel/0124588TZ21"></bb-input>
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
   </main>
   <aside>
+    <hr>
     <h1>used Bootstrap 4 elements</h1>
     <ul>
       <li>buttons</li>

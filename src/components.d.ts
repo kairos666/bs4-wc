@@ -29,74 +29,33 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface BbBooking {
-      'basketDescription': string;
-      'name': string;
-      'paymentType': 'voucher'|'cb'|'card'|'18h';
+    interface BbBlockWrapper {
+      'blockState': 'loading'|'default'|'error';
+      'blockTitle': string;
     }
   }
 
-  interface HTMLBbBookingElement extends StencilComponents.BbBooking, HTMLStencilElement {}
+  interface HTMLBbBlockWrapperElement extends StencilComponents.BbBlockWrapper, HTMLStencilElement {}
 
-  var HTMLBbBookingElement: {
-    prototype: HTMLBbBookingElement;
-    new (): HTMLBbBookingElement;
+  var HTMLBbBlockWrapperElement: {
+    prototype: HTMLBbBlockWrapperElement;
+    new (): HTMLBbBlockWrapperElement;
   };
   interface HTMLElementTagNameMap {
-    'bb-booking': HTMLBbBookingElement;
+    'bb-block-wrapper': HTMLBbBlockWrapperElement;
   }
   interface ElementTagNameMap {
-    'bb-booking': HTMLBbBookingElement;
+    'bb-block-wrapper': HTMLBbBlockWrapperElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'bb-booking': JSXElements.BbBookingAttributes;
+      'bb-block-wrapper': JSXElements.BbBlockWrapperAttributes;
     }
   }
   namespace JSXElements {
-    export interface BbBookingAttributes extends HTMLAttributes {
-      'basketDescription'?: string;
-      'name'?: string;
-      'paymentType'?: 'voucher'|'cb'|'card'|'18h';
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface BbContact {
-      'email': string;
-      'firstName': string;
-      'lastName': string;
-      'phone': string;
-    }
-  }
-
-  interface HTMLBbContactElement extends StencilComponents.BbContact, HTMLStencilElement {}
-
-  var HTMLBbContactElement: {
-    prototype: HTMLBbContactElement;
-    new (): HTMLBbContactElement;
-  };
-  interface HTMLElementTagNameMap {
-    'bb-contact': HTMLBbContactElement;
-  }
-  interface ElementTagNameMap {
-    'bb-contact': HTMLBbContactElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'bb-contact': JSXElements.BbContactAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface BbContactAttributes extends HTMLAttributes {
-      'email'?: string;
-      'firstName'?: string;
-      'lastName'?: string;
-      'phone'?: string;
+    export interface BbBlockWrapperAttributes extends HTMLAttributes {
+      'blockState'?: 'loading'|'default'|'error';
+      'blockTitle'?: string;
     }
   }
 }
@@ -130,74 +89,6 @@ declare global {
   namespace JSXElements {
     export interface BbCustomerListAttributes extends HTMLAttributes {
       'customers'?: any[]|string;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface BbCustomer {
-
-    }
-  }
-
-  interface HTMLBbCustomerElement extends StencilComponents.BbCustomer, HTMLStencilElement {}
-
-  var HTMLBbCustomerElement: {
-    prototype: HTMLBbCustomerElement;
-    new (): HTMLBbCustomerElement;
-  };
-  interface HTMLElementTagNameMap {
-    'bb-customer': HTMLBbCustomerElement;
-  }
-  interface ElementTagNameMap {
-    'bb-customer': HTMLBbCustomerElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'bb-customer': JSXElements.BbCustomerAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface BbCustomerAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface BbInput {
-      'endpoint': string;
-      'lng': Object|string;
-    }
-  }
-
-  interface HTMLBbInputElement extends StencilComponents.BbInput, HTMLStencilElement {}
-
-  var HTMLBbInputElement: {
-    prototype: HTMLBbInputElement;
-    new (): HTMLBbInputElement;
-  };
-  interface HTMLElementTagNameMap {
-    'bb-input': HTMLBbInputElement;
-  }
-  interface ElementTagNameMap {
-    'bb-input': HTMLBbInputElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'bb-input': JSXElements.BbInputAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface BbInputAttributes extends HTMLAttributes {
-      'endpoint'?: string;
-      'lng'?: Object|string;
     }
   }
 }
@@ -301,6 +192,150 @@ declare global {
     export interface MyComponentAttributes extends HTMLAttributes {
       'first'?: string;
       'last'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BbBooking {
+      'basketDescription': string;
+      'name': string;
+      'paymentType': 'voucher'|'cb'|'card'|'18h';
+    }
+  }
+
+  interface HTMLBbBookingElement extends StencilComponents.BbBooking, HTMLStencilElement {}
+
+  var HTMLBbBookingElement: {
+    prototype: HTMLBbBookingElement;
+    new (): HTMLBbBookingElement;
+  };
+  interface HTMLElementTagNameMap {
+    'bb-booking': HTMLBbBookingElement;
+  }
+  interface ElementTagNameMap {
+    'bb-booking': HTMLBbBookingElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'bb-booking': JSXElements.BbBookingAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BbBookingAttributes extends HTMLAttributes {
+      'basketDescription'?: string;
+      'name'?: string;
+      'paymentType'?: 'voucher'|'cb'|'card'|'18h';
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BbContact {
+      'email': string;
+      'firstName': string;
+      'lastName': string;
+      'phone': string;
+    }
+  }
+
+  interface HTMLBbContactElement extends StencilComponents.BbContact, HTMLStencilElement {}
+
+  var HTMLBbContactElement: {
+    prototype: HTMLBbContactElement;
+    new (): HTMLBbContactElement;
+  };
+  interface HTMLElementTagNameMap {
+    'bb-contact': HTMLBbContactElement;
+  }
+  interface ElementTagNameMap {
+    'bb-contact': HTMLBbContactElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'bb-contact': JSXElements.BbContactAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BbContactAttributes extends HTMLAttributes {
+      'email'?: string;
+      'firstName'?: string;
+      'lastName'?: string;
+      'phone'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BbCustomer {
+
+    }
+  }
+
+  interface HTMLBbCustomerElement extends StencilComponents.BbCustomer, HTMLStencilElement {}
+
+  var HTMLBbCustomerElement: {
+    prototype: HTMLBbCustomerElement;
+    new (): HTMLBbCustomerElement;
+  };
+  interface HTMLElementTagNameMap {
+    'bb-customer': HTMLBbCustomerElement;
+  }
+  interface ElementTagNameMap {
+    'bb-customer': HTMLBbCustomerElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'bb-customer': JSXElements.BbCustomerAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BbCustomerAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BbInput {
+      'endpoint': string;
+      'lng': Object|string;
+    }
+  }
+
+  interface HTMLBbInputElement extends StencilComponents.BbInput, HTMLStencilElement {}
+
+  var HTMLBbInputElement: {
+    prototype: HTMLBbInputElement;
+    new (): HTMLBbInputElement;
+  };
+  interface HTMLElementTagNameMap {
+    'bb-input': HTMLBbInputElement;
+  }
+  interface ElementTagNameMap {
+    'bb-input': HTMLBbInputElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'bb-input': JSXElements.BbInputAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BbInputAttributes extends HTMLAttributes {
+      'endpoint'?: string;
+      'lng'?: Object|string;
     }
   }
 }

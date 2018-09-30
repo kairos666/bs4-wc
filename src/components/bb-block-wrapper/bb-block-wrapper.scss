@@ -1,0 +1,24 @@
+@import "../../global/styles/variables.scss";
+@import "../../global/styles/utils.scss";
+
+bb-block-wrapper .bb-block-wrapper { padding-bottom: $gutter-sm;
+    header { margin-bottom: $gutter-sm; }
+
+    .bb-block-wrapper__body { position:relative; min-height:$block-content-min-height;
+        .bb-block-wrapper__inner-body.disabled { visibility:hidden; pointer-events:none; }
+        .bb-block-wrapper__utils { position:absolute; left:0; right:0; top:0; bottom:0; background-color: rgba(255, 255, 255, 0.75);
+            > * { display:none; }
+            &.loading-screen .bb-block-wrapper__loading-screen, &.error-screen .bb-block-wrapper__error-screen { display:block; }
+            &.disabled { display:none; }
+        }
+    }
+
+    .bb-block-wrapper__loading-screen:before, .bb-block-wrapper__error-screen:before { @include material-icon-styles; font-size:3rem; position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); transform-origin: 50% 50%; }
+    .bb-block-wrapper__loading-screen:before { content:'hourglass_full'; animation: hourglass-spin 1s infinite ease; }
+    .bb-block-wrapper__error-screen:before { content:'report_problem'; }
+
+    @keyframes hourglass-spin {
+        0%, 50% { transform: rotate(0deg); }
+		100% { transform: rotate(180deg); }
+}   
+}

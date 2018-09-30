@@ -29,13 +29,20 @@ export class BbCustomerList {
                 <li>
                     <bb-customer>
                         <bb-contact first-name={item.customer.firstName} last-name={item.customer.lastName} phone={item.customer.phone} email={item.customer.email}></bb-contact>
-                        <bb-booking name={item.booking.hotel} basket-description={item.booking.basketDescription} payment-type={item.booking.paymentType}></bb-booking>
+                        { this.renderBooking(item.booking) }
                         { this.renderActions(item.actions) }
                     </bb-customer>
                 </li>
             )}
         </ul>
     );
+  }
+
+  private renderBooking(booking:any) {
+    // wrong data format or no actions
+    if (!booking || !booking.hotel || !booking.basketDescription|| !booking.paymentType) return null;
+
+    return (<bb-booking name={booking.hotel} basket-description={booking.basketDescription} payment-type={booking.paymentType}></bb-booking>)
   }
 
   private renderActions(actions:any) {
