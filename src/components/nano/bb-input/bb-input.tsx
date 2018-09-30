@@ -1,5 +1,5 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
-import { objectPropConverter } from '../../global/scripts/utils';
+import { objectPropConverter } from '../../../global/scripts/utils';
 
 @Component({
   tag: 'bb-input',
