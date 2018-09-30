@@ -10,6 +10,7 @@ export class BbCustomerList {
 
   @Prop() customers: any[]|string;
   @State() _customers: any[];
+  private i18n: any = (window as any).configuration.i18n;
 
   @Watch('customers')
   customersHandler(newValue:any[]|string):void {
@@ -29,10 +30,35 @@ export class BbCustomerList {
                     <bb-customer>
                         <bb-contact first-name={item.customer.firstName} last-name={item.customer.lastName} phone={item.customer.phone} email={item.customer.email}></bb-contact>
                         <bb-booking name={item.booking.hotel} basket-description={item.booking.basketDescription} payment-type={item.booking.paymentType}></bb-booking>
+                        { this.renderActions(item.actions) }
                     </bb-customer>
                 </li>
             )}
         </ul>
     );
+  }
+
+  private renderActions(actions:any) {
+    // wrong data format or no actions
+    if (!actions || actions instanceof Array === false || actions.length === 0) return null;
+
+    // one or many actions
+    if (actions.length === 1) {
+      return (<button type="button" class="btn">{ this.i18n[actions[0].labelKey] }</button>)
+    } else {
+      return (
+        <bs-split-button>
+          {actions.map((action, index) => 
+            {(index === 0)
+              ? <button type="button" slot="primary-action" class="btn">{ this.i18n[action.labelKey] }</button>
+              : <button type="button" class="dropdown-item">{ this.i18n[action.labelKey] }</button>
+            }
+          )}
+          <button type="button" slot="primary-action" class="btn">check in</button>
+          <a class="dropdown-item" href="#">Remboursement</a>
+          <a class="dropdown-item" href="#">Annulation</a>
+        </bs-split-button>
+      )
+    }
   }
 }

@@ -14,7 +14,7 @@ export class BsDropdown {
   render() {
     return (
         <div class={ `dropdown ${(this.isOpen) ? 'show' : ''}` }>
-            <button class={ `btn ${(this.btnType) ? 'btn-' + this.btnType : 'btn-secondary'} dropdown-toggle ${(this.split) ? 'dropdown-toggle-split' : ''}` } onClick={ () => this.dropBtnClicked() } type="button" aria-haspopup="true" aria-expanded={ this.isOpen }>
+            <button class={ `btn ${(this.btnType) ? 'btn-' + this.btnType : ''} dropdown-toggle ${(this.split) ? 'dropdown-toggle-split' : ''}` } onClick={ () => this.dropBtnClicked() } type="button" aria-haspopup="true" aria-expanded={ this.isOpen }>
                 {(!this.split) 
                     ? <slot name="drop-trigger" />
                     : <span class="sr-only">Toggle Dropdown</span>

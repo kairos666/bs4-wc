@@ -11,9 +11,7 @@ export class BsSplitButton {
   render() {
     return (
       <div class="btn-group">
-        <button type="button" class={ `btn ${(this.btnType) ? 'btn-' + this.btnType : 'btn-secondary'}` }>
-          <slot name="primary-action" />
-        </button>
+        <slot name="primary-action" />
         <bs-dropdown split btnType={ this.btnType }>
           <span slot="drop-content">
             <slot></slot>
